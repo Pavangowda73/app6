@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+.menu-container {
+  position: relative;
+}
+
+.menu-btn {
+  background-color: #444;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.menu-btn:hover {
+  background-color: #555;
+}
+
+.dropdown {
+  background-color: #444;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown a {
+  display: block;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  background-color: #444;
+  border-bottom: 1px solid #555;
+}
+
+.dropdown a:hover {
+  background-color: #555;
+}
+
+.hidden {
+  display: none;
+}
+
+.album-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px; /* Adds space between albums */
+}
+
+.album {
+  flex-basis: calc(25% - 20px); /* 4 albums per row for a gallery view */
+  margin: 10px 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.album img {
+  width: 100%;
+  height: 110px; /* Further reduced height for a smaller gallery feel */
+  object-fit: cover; /* Ensure images are cropped evenly */
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.album:hover img {
+  transform: scale(1.05);
+}
+
+.album h3 {
+  padding: 10px 0;
+  color: #333;
+}
+
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 20px;
+}
+
+.photo-container img {
+  width: 30%;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.photo-container img:hover {
+  transform: scale(1.05);
+}
+
+button {
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.fullscreen img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.fullscreen.hidden {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .album {
+    flex-basis: calc(33.33% - 20px); /* 3 albums per row on tablet view */
+  }
+
+  .photo-container img {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .album {
+    flex-basis: calc(33.33% - 10px); /* 3 albums per row on mobile view */
+  }
+
+  .photo-container img {
+    width: 30%; /* Smaller images on mobile */
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .menu-btn {
+    font-size: 1em;
+  }
+
+  .dropdown a {
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,70 @@
+/* Reset any margin or padding to ensure clean layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style for the photo container */
+.photo-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow images to wrap */
+  justify-content: space-between; /* Evenly space out images */
+  padding: 20px;
+  gap: 10px; /* Space between images */
+}
+
+/* Square-shaped images inside the album view */
+.photo-container img {
+  width: calc(20% - 10px); /* 5 images per row, adjusting for margin */
+  height: calc(20% - 10px); /* Ensure images are square-shaped */
+  object-fit: cover; /* Crop images to fit square */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: block; /* Ensure images are treated as block-level elements */
+}
+
+/* Hover effect on images */
+.photo-container img:hover {
+  transform: scale(1.05); /* Slight zoom-in on hover */
+}
+
+/* Fullscreen view when clicking on an image */
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.fullscreen img {
+  max-width: 100%; /* Ensure the image fits the full screen width */
+  max-height: 100%; /* Ensure the image fits the full screen height */
+  object-fit: contain; /* Maintain the original aspect ratio */
+}
+
+.fullscreen.hidden {
+  display: none; /* Hide the full-screen view by default */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .photo-container img {
+    width: calc(20% - 10px); /* Still show 5 images per row on tablets */
+    height: calc(20% - 10px); /* Maintain square shape */
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-container img {
+    width: calc(20% - 10px); /* Still show 5 images per row on mobile */
+    height: calc(20% - 10px); /* Maintain square shape */
+  }
+}

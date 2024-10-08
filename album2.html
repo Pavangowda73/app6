@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vacation Album</title>
+  <link rel="stylesheet" href="albums.css">
+</head>
+<body>
+  <header>
+    <button onclick="window.history.back()">Back to Albums</button>
+    <h1>Vacation Album</h1>
+  </header>
+
+  <main>
+    <div class="photo-container">
+      <img src="1.jpg" alt="Vacation Photo 1" onclick="openFullscreen(this)">
+      <img src="2.jpg" alt="Vacation Photo 2" onclick="openFullscreen(this)">
+      <img src="3.jpg" alt="Vacation Photo 3" onclick="openFullscreen(this)">
+      <img src="1.jpg" alt="Vacation Photo 1" onclick="openFullscreen(this)">
+      <img src="2.jpg" alt="Vacation Photo 2" onclick="openFullscreen(this)">
+      <img src="3.jpg" alt="Vacation Photo 3" onclick="openFullscreen(this)">
+      <img src="1.jpg" alt="Vacation Photo 1" onclick="openFullscreen(this)">
+      <img src="2.jpg" alt="Vacation Photo 2" onclick="openFullscreen(this)">
+      <img src="3.jpg" alt="Vacation Photo 3" onclick="openFullscreen(this)">
+
+    </div>
+  </main>
+
+  <div id="fullscreen-view" class="fullscreen hidden" onclick="closeFullscreen()">
+    <img id="fullscreen-img" src="" alt="Full Screen Image">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
